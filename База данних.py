@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 import time
 
-# ---------------- БАЗА ДАННЫХ ----------------
 
 conn = sqlite3.connect("weather.db")
 cursor = conn.cursor()
@@ -19,7 +18,6 @@ CREATE TABLE IF NOT EXISTS weather (
 
 conn.commit()
 
-# ---------------- ПОЛУЧЕНИЕ ПОГОДЫ ----------------
 
 def get_weather():
     try:
@@ -65,7 +63,6 @@ def get_weather():
     except Exception as e:
         print("Ошибка:", e)
 
-# ---------------- АВТООБНОВЛЕНИЕ ----------------
 
 print("Программа запущена. Обновление каждые 30 минут.")
 
